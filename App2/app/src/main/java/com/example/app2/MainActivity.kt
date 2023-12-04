@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.TextView
+import kotlin.math.round
+import kotlin.math.roundToLong
 
 class MainActivity : AppCompatActivity() {
     private var dataModel: ArrayList<ShopItem>? = null
@@ -17,9 +19,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val listView = findViewById<View>(R.id.itemsList) as ListView
+        var listView = findViewById<View>(R.id.itemsList) as ListView
 
-        val items = arrayOf(
+        var items = arrayOf(
             ShopItem("Arroz 5kg", 36.30, false),
             ShopItem("Leite longa vida", 8.75, false),
             ShopItem("Carne Picanha", 76.78, false),
@@ -36,16 +38,12 @@ class MainActivity : AppCompatActivity() {
         adapter = CustomAdapter(dataModel!!, applicationContext)
         listView.adapter = adapter
 
-        val totalPriceView = findViewById<TextView>(R.id.totalPriceView)
-        totalPriceView.text = "Total Price: $totalPrice"
+
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            val dataModel: ShopItem = dataModel!![position] as ShopItem
+            var dataModel: ShopItem = dataModel!![position] as ShopItem
             dataModel.checked = !dataModel.checked
 
-            totalPrice += 10
-
-            totalPriceView.text = "Total Price"
 
             if (dataModel.checked) {
                 totalPrice += dataModel.value
@@ -53,8 +51,11 @@ class MainActivity : AppCompatActivity() {
                 totalPrice -= dataModel.value
             }
 
+            var totalPriceView = findViewById<TextView>(R.id.totalPriceView)
+            totalPriceView.text = "Total Price: ${String.format("%.2f", totalPrice)}"
+
             adapter.notifyDataSetChanged()
         }
 
-    }
+}
 }

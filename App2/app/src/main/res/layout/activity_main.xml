@@ -31,8 +31,7 @@
                 android:id="@+id/itemsList"
                 android:layout_width="match_parent"
                 android:layout_height="438dp"
-                android:choiceMode="multipleChoiceModal"
-                android:descendantFocusability="blocksDescendants"/>
+               />
 
             <TextView
                 android:layout_marginTop="5dp"
