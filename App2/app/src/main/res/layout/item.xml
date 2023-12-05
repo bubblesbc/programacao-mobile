@@ -11,7 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:focusable="false"/>
+        android:focusable="false"
+        android:textColor="#C54F77"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
 
     <CheckBox
         android:id="@+id/checkbox"

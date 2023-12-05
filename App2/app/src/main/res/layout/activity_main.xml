@@ -5,20 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="24px">
+    android:background="#BAADCF"
+    android:padding="24dp"
+    android:layout_margin="@dimen/cardview_compat_inset_shadow">
 
     <RelativeLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Lista de compras"
-            />
-
+            android:textColor="#D62662"
+            android:textSize="25sp"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_below="@id/title"
@@ -31,20 +36,36 @@
                 android:id="@+id/itemsList"
                 android:layout_width="match_parent"
                 android:layout_height="438dp"
-               />
+                android:layout_marginTop="30dp" />
 
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total"/>
+                android:text="Total"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:layout_marginTop="5dp"
                 android:id="@+id/totalPriceView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="124dp"
+            android:layout_height="102dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginEnd="7dp"
+            android:layout_toEndOf="@+id/title"
+            app:srcCompat="@drawable/_594363_removebg_preview" />
 
 
     </RelativeLayout>

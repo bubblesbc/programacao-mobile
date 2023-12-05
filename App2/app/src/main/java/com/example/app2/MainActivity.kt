@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             var totalPriceView = findViewById<TextView>(R.id.totalPriceView)
-            totalPriceView.text = "Total Price: ${String.format("%.2f", totalPrice)}"
+            totalPriceView.text = "Preço da compra: ${String.format("%.2f", totalPrice)}"
 
             adapter.notifyDataSetChanged()
         }
